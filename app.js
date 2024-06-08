@@ -64,8 +64,10 @@ function saveValueToLocalStorage(obj) {
 
 function displayUserNotes() {
   var notes = localStorage.getItem("notes");
-  var list = document.getElementById("list");
-  var currentUserEmail = localStorage.getItem("email");
+  var list = documentc.getElementById("list");
+  var urrentUserEmail = localStorage.getItem("email");
+ 
+ 
 
   if (notes) {
     list.innerHTML = "";
@@ -73,7 +75,14 @@ function displayUserNotes() {
     console.log(notes);
     notes.forEach(function (data, ind) {
       console.log("data=>", data);
-      if (data.email === currentUserEmail) {
+      if (user_email === "admin@gmail.com") {
+        var liElement = ` <li class="border rounded p-2 my-2">
+        <p class = "font-medium">${data.note}</p> 
+            <p>${data.email}</p>
+          </li>`;
+        list.innerHTML += liElement;
+      }
+     else (data.email) {
         var liElement = ` <li class="border rounded p-2 my-2">
         <p class = "font-medium">${data.note}</p> 
             <p>${data.email}</p>
